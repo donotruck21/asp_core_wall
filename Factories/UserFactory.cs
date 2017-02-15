@@ -24,8 +24,35 @@ namespace Wall.Factory{
         
 
 
-
         // ---------- METHODS ----------- //
+
+        // -- ADD USER -- //
+        public void AddUser(User user){
+            using(IDbConnection dbConnection = Connection){
+                string Query = "INSERT into users (FirstName, LastName, Email, Password, CreatedAt, UpdatedAt) VALUES (@FirstName, @LastName, @Email, @Password, NOW(), NOW())";
+                dbConnection.Open();
+                dbConnection.Execute(Query, user);
+            }
+        }
+
+        // -- GET LAST USER -- //
+        public User GetLastUser(){
+            using(IDbConnection dbConnection = Connection){
+                string Query = "SELECT * FROM users ORDER BY UserId DESC LIMIT 1";
+                dbConnection.Open();
+                return dbConnection.QuerySingleOrDefault<User>(Query);
+            }
+        }
+
+        public User FindByUserId(int UserId){
+            using(IDbConnection dbConnection = Connection){
+                string Query = $"SELECT * FROM users WHERE UserId = {UserId}";
+                dbConnection.Open();
+                return dbConnection.QuerySingleOrDefault<User>(Query);
+            }
+        }
+
+
 
     }
 }

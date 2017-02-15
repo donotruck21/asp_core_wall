@@ -39,9 +39,9 @@
             <input type="submit" value="Log In" class="btn btn-success">
         </form>
     </div>
-    @*<div>
+    <div>
         @{
-            foreach(var error in ViewBag.errors){
+            foreach(var error in ViewBag.Errors){
                 //If there are any errors for a field...
                 if(@error.Errors.Count > 0){
                     // We show the first error for that field
@@ -49,6 +49,6 @@
                 }
             }
         }
-    </div>*@
+    </div>
 
 </div>
