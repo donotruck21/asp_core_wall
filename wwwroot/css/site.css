@@ -38,3 +38,9 @@ form{
     width: 100px;
     text-align: right;
 }
+
+.logout{
+    position: absolute;
+    top: 30px;
+    right: 40px;
+}
