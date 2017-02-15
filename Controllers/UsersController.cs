@@ -78,8 +78,8 @@ namespace Wall.Controllers
                     HttpContext.Session.SetInt32("CurrUserId", user.UserId);
                     return RedirectToAction("Wall");
                 } else {
-                    ViewBag.LogErrors = "Invalid Combination";
                     ViewBag.Errors = new List<User>();
+                    ViewBag.LogErrors = new List<string>{"Invalid Name or Password"};
                     return View("Index");
                 }
                 return RedirectToAction("Wall");
