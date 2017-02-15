@@ -44,9 +44,19 @@ namespace Wall.Factory{
             }
         }
 
+        // -- FIND USER BY ID -- //
         public User FindByUserId(int UserId){
             using(IDbConnection dbConnection = Connection){
                 string Query = $"SELECT * FROM users WHERE UserId = {UserId}";
+                dbConnection.Open();
+                return dbConnection.QuerySingleOrDefault<User>(Query);
+            }
+        }
+
+        // -- FIND USER BY EMAIL -- //
+        public User FindByEmail(string email){
+            using(IDbConnection dbConnection = Connection){
+                string Query = $"SELECT * FROM users WHERE Email = '{email}'";
                 dbConnection.Open();
                 return dbConnection.QuerySingleOrDefault<User>(Query);
             }

@@ -51,4 +51,12 @@
         }
     </div>
 
+    <div>
+        @{
+            foreach(var error in ViewBag.LogErrors){
+                <p>@error</p>
+            }
+        }
+    </div>
+
 </div>

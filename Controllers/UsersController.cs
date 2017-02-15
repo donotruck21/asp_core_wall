@@ -24,6 +24,7 @@ namespace Wall.Controllers
         public IActionResult Index()
         {
             ViewBag.Errors = new List<User>();
+            ViewBag.LogErrors = new List<User>();
             return View();
         }
 
@@ -59,8 +60,42 @@ namespace Wall.Controllers
             } else {
                 System.Console.WriteLine("ERRORS: Validations triggered");
                 ViewBag.Errors = ModelState.Values;
+                ViewBag.LogErrors = new List<User>();
                 return View("Index");
             }
         }
+
+
+        // POST: /Login/
+        [HttpPost]
+        [Route("Login")]
+        public IActionResult Login(string email, string PwToCheck){
+            var user = userFactory.FindByEmail(email);
+            if(user != null && PwToCheck != null){
+                // unhash pw and check against input
+                var Hasher = new PasswordHasher<User>();
+                if(0 != Hasher.VerifyHashedPassword(user, user.Password, PwToCheck)){
+                    HttpContext.Session.SetInt32("CurrUserId", user.UserId);
+                    return RedirectToAction("Wall");
+                } else {
+                    ViewBag.LogErrors = "Invalid Combination";
+                    ViewBag.Errors = new List<User>();
+                    return View("Index");
+                }
+                return RedirectToAction("Wall");
+            } else {
+                // user was not found or password was empty
+                ViewBag.Errors = new List<User>();
+                ViewBag.LogErrors = new List<string>{"Invalid Name or Password"};
+                return View("Index");
+            }
+        }
+
+
+
+
+
+
+
     }
 }
