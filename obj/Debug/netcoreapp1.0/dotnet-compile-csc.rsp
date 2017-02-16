@@ -189,8 +189,10 @@
 -resource:"/Users/donotruck21/Desktop/csharp/aspnet_core/wall/obj/Debug/netcoreapp1.0/walldotnet-compile.deps.json",wall.deps.json
 "/Users/donotruck21/Desktop/csharp/aspnet_core/wall/Program.cs"
 "/Users/donotruck21/Desktop/csharp/aspnet_core/wall/Startup.cs"
+"/Users/donotruck21/Desktop/csharp/aspnet_core/wall/Controllers/MessagesController.cs"
 "/Users/donotruck21/Desktop/csharp/aspnet_core/wall/Controllers/UsersController.cs"
 "/Users/donotruck21/Desktop/csharp/aspnet_core/wall/Factories/IFactory.cs"
+"/Users/donotruck21/Desktop/csharp/aspnet_core/wall/Factories/MessageFactory.cs"
 "/Users/donotruck21/Desktop/csharp/aspnet_core/wall/Factories/UserFactory.cs"
 "/Users/donotruck21/Desktop/csharp/aspnet_core/wall/Models/Comment.cs"
 "/Users/donotruck21/Desktop/csharp/aspnet_core/wall/Models/Message.cs"

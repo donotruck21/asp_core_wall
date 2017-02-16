@@ -16,6 +16,17 @@ namespace Wall.Controllers{
         }
 
 
+        // Post: /CreateMessage/
+        [HttpPost]
+        [Route("CreateMessage")]
+        public IActionResult CreateMessage(string MContent)
+        {
+            System.Console.WriteLine(MContent);
+            System.Console.WriteLine(HttpContext.Session.GetInt32("CurrUserId"));
+            return RedirectToAction("Wall", "Users");
+        }
+
+
 
 
     }

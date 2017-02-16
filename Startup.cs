@@ -29,6 +29,7 @@ namespace Wall
             services.AddMvc();
             services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
             services.AddScoped<UserFactory>();
+            services.AddScoped<MessageFactory>();
             services.AddSession();
         }
 

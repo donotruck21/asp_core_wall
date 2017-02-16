@@ -11,10 +11,13 @@ namespace Wall.Controllers
 {
     public class UsersController : Controller{
         private readonly UserFactory userFactory;
+        // private readonly MessageFactory messageFactory;
 
         public UsersController(UserFactory user){
             userFactory = user;
+            // messageFactory = message;
         }
+
 
         
         // GET: /Home/
