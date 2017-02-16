@@ -23,6 +23,7 @@ namespace Wall.Controllers{
         {
             System.Console.WriteLine(MContent);
             System.Console.WriteLine(HttpContext.Session.GetInt32("CurrUserId"));
+            messageFactory.AddMessage(MContent, (int)HttpContext.Session.GetInt32("CurrUserId"));
             return RedirectToAction("Wall", "Users");
         }
 

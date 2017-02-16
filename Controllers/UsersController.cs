@@ -11,11 +11,11 @@ namespace Wall.Controllers
 {
     public class UsersController : Controller{
         private readonly UserFactory userFactory;
-        // private readonly MessageFactory messageFactory;
+        private readonly MessageFactory messageFactory;
 
-        public UsersController(UserFactory user){
+        public UsersController(UserFactory user, MessageFactory message){
             userFactory = user;
-            // messageFactory = message;
+            messageFactory = message;
         }
 
 
@@ -38,6 +38,8 @@ namespace Wall.Controllers
         {
             // Get User by User Id
             ViewBag.CurrentUser = userFactory.FindByUserId((int)HttpContext.Session.GetInt32("CurrUserId"));
+            // Get All Messages
+
             return View();
         }
 

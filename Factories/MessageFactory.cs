@@ -25,8 +25,14 @@ namespace Wall.Factory{
 
         // ---------- METHODS ----------- //
 
-        
 
+        public void AddMessage(string MContent, int UserId){
+            using(IDbConnection dbConnection = Connection){
+                string Query = $"INSERT into messages (MContent, CreatedAt, UpdatedAt, UserId) VALUES ('{MContent}', NOW(), NOW(), {UserId})";
+                dbConnection.Open();
+                dbConnection.Execute(Query);
+            }
+        }
 
 
 
