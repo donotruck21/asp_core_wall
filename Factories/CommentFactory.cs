@@ -34,6 +34,20 @@ namespace Wall.Factory{
             }
         }
 
+        public IEnumerable<Comment> GetAll(){
+            using(IDbConnection dbConnection = Connection){
+                var query = "SELECT * FROM comments JOIN users ON comments.UserId = users.UserId";
+                dbConnection.Open();
+
+                var myComments = dbConnection.Query<Comment, User, Comment>(query, (comment, user) => { 
+                    comment.user = user; 
+                    return comment; 
+                }, splitOn : "UserId");
+
+                return myComments;
+            }
+        }
+
 
 
 

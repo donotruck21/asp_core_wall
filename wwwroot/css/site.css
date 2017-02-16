@@ -4,7 +4,7 @@
 }
 .container{
     text-align: center;
-    height: 2000px;
+    /*height: 2000px;*/
     background-color: #e6e6e6;
 }
 
@@ -79,7 +79,6 @@ textarea{
 }
 
 .allMessages{
-    border: 1px dotted red;
     text-align: left;
 }
 
@@ -102,7 +101,23 @@ textarea{
 }
 
 .line{
-    border-top: 2px solid gray;
-    padding: 10px 0 0 0;
+    border-bottom: 2px solid gray;
+    padding: 0 0 10px 0;
+    margin: 0 0 10px 0;
+}
+
+.moveRight{
+    margin-left: 20px;
+}
+
+.comment{
+    /*border: 1px dotted green;*/
+    background-color: #e6e6e6;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.comment p:last-child{
     margin: 0;
 }

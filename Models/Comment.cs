@@ -21,7 +21,7 @@ namespace Wall.Models
 
         public DateTime UpdatedAt { get; set; }
 
-
+        public int MessageId { get; set; }
 
         public User user { get; set; }
 

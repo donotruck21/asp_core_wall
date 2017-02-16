@@ -12,10 +12,12 @@ namespace Wall.Controllers
     public class UsersController : Controller{
         private readonly UserFactory userFactory;
         private readonly MessageFactory messageFactory;
+        private readonly CommentFactory commentFactory;
 
-        public UsersController(UserFactory user, MessageFactory message){
+        public UsersController(UserFactory user, MessageFactory message, CommentFactory comment){
             userFactory = user;
             messageFactory = message;
+            commentFactory = comment;
         }
 
 
@@ -40,6 +42,9 @@ namespace Wall.Controllers
             ViewBag.CurrentUser = userFactory.FindByUserId((int)HttpContext.Session.GetInt32("CurrUserId"));
             // Get All Messages
             ViewBag.AllMessages = messageFactory.GetAll();
+            // Get All Comments
+            ViewBag.AllComments = commentFactory.GetAll();
+
             return View();
         }
 

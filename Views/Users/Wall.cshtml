@@ -20,13 +20,22 @@
                 <div class="message">
                     <p><b>@message.user.FirstName @message.user.LastName</b> said:</p>
                     <div class="MContent">
-                        <p>@message.MContent</p>
-                        <p class="line">Comment:</p>
-                        <form action="CreateComment" method="post">
-                            <textarea name="CContent" cols="142" rows="3"></textarea><br>
-                            <input name="MessageId" type="hidden" value="@message.MessageId">
-                            <input type="submit" class="btn btn-success" value="Post">
+                        <p class="line">@message.MContent</p>
+                        <div class="moveRight">
+                            @foreach(var comment in ViewBag.AllComments){
+                                    <div class='comment'>
+                                        @comment.MessageId
+                                        <p><b>@comment.user.FirstName @comment.user.LastName</b> said:</p>
+                                        <p>@comment.CContent</p>
+                                    </div>
+                            }
+                            <p>Comment:</p>
+                            <form action="CreateComment" method="post">
+                                <textarea name="CContent" cols="142" rows="3"></textarea><br>
+                                <input name="MessageId" type="hidden" value="@message.MessageId">
+                                <input type="submit" class="btn btn-success" value="Post">
                         </form>
+                        </div>
                     </div>
                 </div>
             }
