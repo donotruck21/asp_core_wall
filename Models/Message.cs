@@ -22,7 +22,6 @@ namespace Wall.Models
         public DateTime UpdatedAt { get; set; }
 
 
-
         public User user { get; set; }
     }
 }

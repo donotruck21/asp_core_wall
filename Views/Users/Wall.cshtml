@@ -2,6 +2,15 @@
     ViewData["Title"] = "Dashboard Page";
 }
 <div class="container">
-    <h1>Welcome to the Wall, @ViewBag.CurrentUser.FirstName! </h1>
-    <a href="Logout" class="logout">Log Out</a>
+    <div class="header">
+        <h1>Welcome to the Wall, @ViewBag.CurrentUser.FirstName! </h1>
+        <a href="Logout" class="logout">Log Out</a>
+    </div>
+    <div class="messageDiv">
+        <h2>Post a Message:</h2>
+        <form action="CreateMessage" method="post">
+            <textarea name="MContent" cols="139" rows="6"></textarea>
+            <input type="submit" class="btn btn-success" value="Post">
+        </form>
+    </div>
 </div>

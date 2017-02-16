@@ -9,8 +9,7 @@ using Wall.Models;
 
 namespace Wall.Controllers
 {
-    public class UsersController : Controller
-    {
+    public class UsersController : Controller{
         private readonly UserFactory userFactory;
 
         public UsersController(UserFactory user){

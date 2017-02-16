@@ -4,6 +4,8 @@
 }
 .container{
     text-align: center;
+    height: 2000px;
+    background-color: #e6e6e6;
 }
 
 .box{
@@ -18,7 +20,7 @@
 
 .box h3{
     text-align: left;
-    background: white;
+    background: #e6e6e6;
     position: absolute;
     top: -35px;
     left: 20px;
@@ -43,4 +45,34 @@ form{
     position: absolute;
     top: 30px;
     right: 40px;
+}
+
+.header{
+    border-bottom: 2px solid black;
+    position: fixed;
+    width: 1120px;
+    z-index: 5;
+    background-color: #e6e6e6;
+}
+
+.header h2{
+    margin-left: 20px;
+    text-align: left;
+}
+
+.messageDiv{
+    /*display: inline-block;*/
+    margin-top: 100px;
+    width: 1000px;
+}
+
+.messageDiv form{
+    margin: 0;
+    width: 100%;
+    border-bottom: 2px solid gray;
+    padding-bottom: 20px;
+}
+
+.messageDiv textarea{
+    border-radius: 5px;
 }
