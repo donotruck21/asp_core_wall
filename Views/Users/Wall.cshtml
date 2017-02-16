@@ -22,8 +22,9 @@
                     <div class="MContent">
                         <p>@message.MContent</p>
                         <p class="line">Comment:</p>
-                        <form action="">
+                        <form action="CreateComment" method="post">
                             <textarea name="CContent" cols="142" rows="3"></textarea><br>
+                            <input name="MessageId" type="hidden" value="@message.MessageId">
                             <input type="submit" class="btn btn-success" value="Post">
                         </form>
                     </div>

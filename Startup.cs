@@ -30,6 +30,7 @@ namespace Wall
             services.Configure<MySqlOptions>(Configuration.GetSection("DBInfo"));
             services.AddScoped<UserFactory>();
             services.AddScoped<MessageFactory>();
+            services.AddScoped<CommentFactory>();
             services.AddSession();
         }
 
