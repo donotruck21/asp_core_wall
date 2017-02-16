@@ -13,4 +13,22 @@
             <input type="submit" class="btn btn-success" value="Post">
         </form>
     </div>
+
+    <div class="allMessages">
+        @{
+            foreach(var message in ViewBag.AllMessages){
+                <div class="message">
+                    <p><b>@message.user.FirstName @message.user.LastName</b> said:</p>
+                    <div class="MContent">
+                        <p>@message.MContent</p>
+                        <p class="line">Comment:</p>
+                        <form action="">
+                            <textarea name="CContent" cols="142" rows="3"></textarea><br>
+                            <input type="submit" class="btn btn-success" value="Post">
+                        </form>
+                    </div>
+                </div>
+            }
+        }
+    </div>
 </div>

@@ -71,8 +71,38 @@ form{
     width: 100%;
     border-bottom: 2px solid gray;
     padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-.messageDiv textarea{
+textarea{
     border-radius: 5px;
+}
+
+.allMessages{
+    border: 1px dotted red;
+    text-align: left;
+}
+
+.message{
+    background-color: #cccccc;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.MContent{
+    margin-left: 20px;
+}
+
+.message form{
+    margin: 0;
+    width: 100%;
+    padding: 10px 0;
+    /*margin-bottom: 20px;*/
+}
+
+.line{
+    border-top: 2px solid gray;
+    padding: 10px 0 0 0;
+    margin: 0;
 }

@@ -39,7 +39,7 @@ namespace Wall.Controllers
             // Get User by User Id
             ViewBag.CurrentUser = userFactory.FindByUserId((int)HttpContext.Session.GetInt32("CurrUserId"));
             // Get All Messages
-
+            ViewBag.AllMessages = messageFactory.GetAll();
             return View();
         }
 
